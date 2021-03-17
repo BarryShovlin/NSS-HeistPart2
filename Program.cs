@@ -11,17 +11,25 @@ namespace HeistPartII
         static void Main(string[] args)
         {
 
-            Bank SouthBank = new Bank();
-
             Hacker hacker = new Hacker();
+            hacker.Name = "Hacks McGee";
+            hacker.SkillLevel = 78;
+            hacker.PercentCut = 45;
 
             Muscle muscle = new Muscle();
+            muscle.Name = "Dad Calves";
+            muscle.SkillLevel = 60;
+            muscle.PercentCut = 20;
 
-            LockSpecialist lockSpecialist = new LockSpecialist();
+            LockSpecialist lox = new LockSpecialist();
+            lox.Name = "Papa Lock";
+            lox.SkillLevel = 40;
+            lox.PercentCut = 50;
+
 
             List<IRobber> rolodex = new List<IRobber>()
             {
-                hacker, muscle, lockSpecialist
+                hacker, muscle, lox
             };
             bool teamAssemble = true;
             while (teamAssemble)
@@ -68,24 +76,27 @@ namespace HeistPartII
 
                 if (returnedSpecialty == 1)
                 {
-                    hacker.Name = newOpName;
-                    hacker.SkillLevel = newOpSkill;
-                    hacker.PercentCut = newOpCut;
-                    rolodex.Add(hacker);
+                    Hacker newHack = new Hacker();
+                    newHack.Name = newOpName;
+                    newHack.SkillLevel = newOpSkill;
+                    newHack.PercentCut = newOpCut;
+                    rolodex.Add(newHack);
                 }
                 else if (returnedSpecialty == 2)
                 {
-                    muscle.Name = newOpName;
-                    muscle.SkillLevel = newOpSkill;
-                    muscle.PercentCut = newOpCut;
-                    rolodex.Add(muscle);
+                    Muscle pump = new Muscle();
+                    pump.Name = newOpName;
+                    pump.SkillLevel = newOpSkill;
+                    pump.PercentCut = newOpCut;
+                    rolodex.Add(pump);
                 }
                 else
                 {
-                    lockSpecialist.Name = newOpName;
-                    lockSpecialist.SkillLevel = newOpSkill;
-                    lockSpecialist.PercentCut = newOpCut;
-                    rolodex.Add(lockSpecialist);
+                    LockSpecialist pop = new LockSpecialist();
+                    pop.Name = newOpName;
+                    pop.SkillLevel = newOpSkill;
+                    pop.PercentCut = newOpCut;
+                    rolodex.Add(pop);
 
                 }
                 Console.WriteLine("Would you like to add another operative? [y/n]");
@@ -135,7 +146,10 @@ namespace HeistPartII
             {
                 Console.WriteLine("Least secure: Security Guard");
             }
-
+            foreach (IRobber r in rolodex)
+            {
+                Console.WriteLine($"Name:{r.Name}, Skill: {r.SkillLevel}, Cut: {r.PercentCut} ");
+            }
 
 
         }

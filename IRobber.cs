@@ -8,5 +8,8 @@ public interface IRobber
     {
 
     }
+    void skillSet()
+    {
+    }
 
 }

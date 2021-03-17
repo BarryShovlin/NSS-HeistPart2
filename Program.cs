@@ -148,7 +148,14 @@ namespace HeistPartII
             }
             foreach (IRobber r in rolodex)
             {
-                Console.WriteLine($"Name:{r.Name}, Skill: {r.SkillLevel}, Cut: {r.PercentCut} ");
+                for (int i = 0; i <= rolodex.Count; i++)
+                {
+                    Console.WriteLine("---------------------------");
+                    Console.WriteLine($"{i}");
+                    r.skillSet();
+                    Console.WriteLine($"Name:{r.Name}, SkillLevel: {r.SkillLevel}, Cut: {r.PercentCut} ");
+                    Console.WriteLine("");
+                }
             }
 
 

@@ -16,6 +16,12 @@ public class Hacker : IRobber
             Console.WriteLine($"{Name}'s done it again!  Alarm has been disabled.");
         }
     }
+    public void skillSet()
+    {
+        Console.WriteLine("Hacker");
+    }
+
+
 
 
 }

@@ -16,6 +16,10 @@ public class LockSpecialist : IRobber
             Console.WriteLine($"{Name} has successfully broken into the vault");
         }
     }
+    public void skillSet()
+    {
+        Console.WriteLine("lock specialist");
+    }
 
 
 }

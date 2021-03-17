@@ -16,4 +16,8 @@ public class Muscle : IRobber
             Console.WriteLine($"{Name} has taken out the security guard with a roundhouse kick!!");
         }
     }
+    public void skillSet()
+    {
+        Console.WriteLine("Muscle");
+    }
 }

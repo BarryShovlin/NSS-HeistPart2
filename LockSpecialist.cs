@@ -6,7 +6,6 @@ public class LockSpecialist : IRobber
     public string Name { get; set; }
     public int SkillLevel { get; set; }
     public int PercentCut { get; set; }
-    public int Id { get; set; }
     public void PerformSkill(Bank bank)
     {
         int LockSkill = bank.VaultScore - SkillLevel;

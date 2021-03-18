@@ -73,7 +73,6 @@ namespace HeistPartII
                 Console.WriteLine($"What percentage of each heist is {newOpName}'s cut?");
                 string cut = Console.ReadLine();
                 int newOpCut = Int32.Parse(cut);
-                int newOpId = 0;
 
                 if (returnedSpecialty == 1)
                 {
@@ -81,7 +80,6 @@ namespace HeistPartII
                     newHack.Name = newOpName;
                     newHack.SkillLevel = newOpSkill;
                     newHack.PercentCut = newOpCut;
-                    newHack.Id = newOpId++;
                     rolodex.Add(newHack);
                 }
                 else if (returnedSpecialty == 2)
@@ -90,7 +88,6 @@ namespace HeistPartII
                     pump.Name = newOpName;
                     pump.SkillLevel = newOpSkill;
                     pump.PercentCut = newOpCut;
-                    pump.Id = newOpId++;
                     rolodex.Add(pump);
                 }
                 else
@@ -99,7 +96,6 @@ namespace HeistPartII
                     pop.Name = newOpName;
                     pop.SkillLevel = newOpSkill;
                     pop.PercentCut = newOpCut;
-                    pop.Id = newOpId++;
                     rolodex.Add(pop);
 
                 }
@@ -152,13 +148,18 @@ namespace HeistPartII
             }
 
 
+            int index = 1;
+
             foreach (IRobber r in rolodex)
             {
+
                 Console.WriteLine("---------------------------");
-                Console.WriteLine($"[{r.Id}]");
+                Console.WriteLine($"[{index}]");
+                Console.Write("Skillet:  ");
                 r.skillSet();
                 Console.WriteLine($"Name:{r.Name}, SkillLevel: {r.SkillLevel}, Cut: {r.PercentCut} ");
                 Console.WriteLine("");
+                index++;
             }
 
 
